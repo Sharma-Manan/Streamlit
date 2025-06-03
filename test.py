@@ -92,4 +92,7 @@ if uploaded_file is not None:
     "Petal_W": [st.number_input("Petal Width", min_value=0.0)],
 })
     
-    st.write(df1)
+    predict1 = st.button("Predict Species")
+    if predict1:
+      st.write(model.predict(df1))
+    
