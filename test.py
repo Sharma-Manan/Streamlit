@@ -106,4 +106,4 @@ if uploaded_file is not None:
 
     predict1 = st.button("Predict Species")
     if predict1:
-      st.success(model.predict(input_data))
+      st.write(model.predict(input_data))
