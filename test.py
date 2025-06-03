@@ -85,14 +85,25 @@ if uploaded_file is not None:
     st.pyplot(plot_decision_tree(model, x_train.columns, model.classes_))
 
 
-    df1 = pd.DataFrame({
-    "Sepal_L": [st.number_input("Sepal Length", min_value=0.0)],
-    "Sepal_W": [st.number_input("Sepal Width", min_value=0.0)],
-    "Petal_L": [st.number_input("Petal Length", min_value=0.0)],
-    "Petal_W": [st.number_input("Petal Width", min_value=0.0)],
-})
+    # Collect each input separately from user
+    sepal_length = st.number_input("Sepal Length", min_value=0.0)
+    sepal_width = st.number_input("Sepal Width", min_value=0.0)
+    petal_length = st.number_input("Petal Length", min_value=0.0)
+    petal_width = st.number_input("Petal Width", min_value=0.0)
+
+    input_data = [[sepal_length, sepal_width, petal_length, petal_width]]
+
+
+#     a = np.array()
+
+#     df1 = pd.DataFrame({
+#     "Sepal_L": [st.number_input("Sepal Length", min_value=0.0)],
+#     "Sepal_W": [st.number_input("Sepal Width", min_value=0.0)],
+#     "Petal_L": [st.number_input("Petal Length", min_value=0.0)],
+#     "Petal_W": [st.number_input("Petal Width", min_value=0.0)],
+# })
     
+
     predict1 = st.button("Predict Species")
     if predict1:
-      st.write(model.predict(df1))
-    
+      st.write(model.predict(input_data))
