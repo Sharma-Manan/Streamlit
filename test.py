@@ -93,17 +93,6 @@ if uploaded_file is not None:
 
     input_data = [[sepal_length, sepal_width, petal_length, petal_width]]
 
-
-#     a = np.array()
-
-#     df1 = pd.DataFrame({
-#     "Sepal_L": [st.number_input("Sepal Length", min_value=0.0)],
-#     "Sepal_W": [st.number_input("Sepal Width", min_value=0.0)],
-#     "Petal_L": [st.number_input("Petal Length", min_value=0.0)],
-#     "Petal_W": [st.number_input("Petal Width", min_value=0.0)],
-# })
-    
-
     predict1 = st.button("Predict Species")
     if predict1:
       st.write(f"{model.predict(input_data)}")
